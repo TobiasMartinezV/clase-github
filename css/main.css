@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*propiedades del padre -grid se aplica al padre*/
+.padre{
+    height: 500px;
+    display: grid; /*no viene acompañada con estilos x defecto (tenemos q trabajar con 2 propiedades mas[para trabajar columnas y filas])*/
+    grid-template-columns: 5fr 1fr;
+    grid-template-rows:1fr 4fr ;
+    /*fr (fraction) solo se usa para grid y es relativo*/
+
+    column-gap: 10px;
+    row-gap: 10px;
+
+}
+
+
+/*popiedades de los hijos*/
+.hijo1{
+    background-color: violet;
+}
+.hijo2{
+    background-color: aqua;
+}
+.hijo3{
+    background-color: blueviolet;
+}
+.hijo4{
+    background-color: blue;
+}
+
+/*ejemplo dos nostros*/
+.ejemplo{
+    height: 500px;
+    background-color: coral;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    justify-items: center;
+    align-items: center;
+}
+
+/*alinearlos en el eje horizontal a los hijos desde lso padres justify-items (content afecta al padre - items afecta a los items dentro del padre)*/
+/*alinearlos en el eje vertical a los hijos desde el padre align-items*/
+
+/*propiedades de los hijos*/
+.imagen-1{
+    justify-self: end; /*para hablar del hijo especifico*/
+    align-self: flex-end;
+}
+.imagen-2{
+    justify-self: start;
+    align-self: flex-end;
+}
+
+
+
+
+
+/*ultimo ejemplo*/
+
+/*propiedades del padre*/
+.contenedor{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 1fr 0.5fr;
+
+    /*sirve para trabajar las areas de nuetsro html (header, main, section, footer)*/
+    grid-template-areas: 
+        "header header header" 
+        "main main section"
+        "footer footer footer"
+    ;
+}
+
+/*propieddaes de los hijos*/
+
+
+header{
+    background-color: aqua;
+    grid-area: header;
+    display: flex;
+}
+
+main{
+    background-color: blue;
+    grid-area: main;
+    justify-self: center;
+}
+
+section{
+    background-color: rgb(58, 77, 29);
+    grid-area: section;
+    display: flex;
+    flex-direction: column;
+}
+
+footer{
+    background-color: blueviolet;
+    grid-area: footer;
+}
+
+/*juego para entender grid: grid garden*/
